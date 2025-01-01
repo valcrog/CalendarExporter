@@ -1,6 +1,6 @@
 const courseGroup = { 'TEC': 6, 'Projet': 6, 'RSX2': 6, 'GL': 4, 'JSFS': 5, 'Logique': 2, 'LAAS': 3, 'ARCHI': 3, 'PDS': 4, 'Découverte': 6 };
 const optionChoices = ['BIOINFO', 'PP', 'II2D', 'META', 'MAL', 'PDM'];
-const BASE_URL = 'https://calendar-exporter-api.vercel.app/generate?'
+const BASE_URL = 'https://fstlillecs-s6-2425-agenda.vercel.app/generate?'
 
 const generateCourseDropdowns = (courseGroup) => {
     const container = document.querySelector('.choice');

@@ -1,6 +1,8 @@
 import json
 import requests
 import os
+import uuid
+from datetime import datetime
 from api.ClassSlot import ClassSlot
 
 JSON_URL: str = os.getenv('JSON_URL', 'https://default-url.com')
@@ -42,8 +44,13 @@ def export_slots_to_ics(slots: list[ClassSlot]) -> str:
     ics_lines.append("BEGIN:VCALENDAR")
     ics_lines.append("VERSION:2.0")
 
+    now_utc_str = datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+
     for slot in slots:
+        uid_str = str(uuid.uuid4())
         ics_lines.append("BEGIN:VEVENT")
+        ics_lines.append(f"UID:{uid_str}")
+        ics_lines.append(f"DTSTAMP:{now_utc_str}") 
         ics_lines.append(f"SUMMARY:{slot.title}")
 
         if slot.allDay:

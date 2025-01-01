@@ -65,6 +65,11 @@ const copyTextArea = () => {
     alert("ICS generation link has been copied to clipboard");
 }
 
+const downloadICS = () => {
+    var url = document.getElementById("result").value;
+    window.open(url);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     generateCourseDropdowns(courseGroup);
 });

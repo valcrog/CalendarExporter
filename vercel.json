@@ -2,18 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/asgi.py",
+      "src": "api/*.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
-      "src": "/generate(.*)",
-      "dest": "api/asgi.py"
-    },
-    {
-      "src": "/",
-      "dest": "/public/index.html"
+      "src": "/generate",
+      "dest": "api/main.py"
     },
     {
       "src": "/(.*)",

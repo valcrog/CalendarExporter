@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Response, Query
 from typing import Optional
-from ics_generator import generate_ics
+from api.ics_generator import generate_ics
+
 
 app = FastAPI()
 

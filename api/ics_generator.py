@@ -1,7 +1,7 @@
 import json
 import requests
 import os
-from ClassSlot import ClassSlot
+from api.ClassSlot import ClassSlot
 
 JSON_URL: str = os.getenv('JSON_URL', 'https://default-url.com')
 OPTIONS: list[str] = ['all', 'none', 'BIOINFO', 'PP', 'II2D', 'META', 'MAL', 'PDM']

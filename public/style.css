@@ -16,8 +16,9 @@ body {
 }
 
 .container {
-    width: 60%;
-    height: 60%;
+    width: 80vw;
+    max-width: 800px;
+    height: auto;
     background-color: #ffeedf;
     display: flex;
     flex-direction: column;
@@ -26,7 +27,8 @@ body {
     border-radius: 20px;
     -webkit-box-shadow: 5px 5px 13px 5px rgba(0,0,0,0.05); 
     box-shadow: 5px 5px 13px 5px rgba(0,0,0,0.05);
-    padding: 30px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .output {
@@ -41,8 +43,13 @@ body {
     flex: 3;
 }
 
+.output #copy {
+    flex: 0;
+}
+
 .output button {
     flex: 1;
+    padding: 10px;
     background-color: rgb(46, 128, 46);
     color: white;
     font-size: larger;
@@ -74,13 +81,15 @@ body {
     position: absolute;
     font-size: 13px;
     bottom: 20px;
+    z-index: -1;
 }
 
 .choice {
     width: 80%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0px;
 }
 
 .choice label {
